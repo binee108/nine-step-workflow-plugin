@@ -1,0 +1,28 @@
+{
+  "name": "nine-step-workflow",
+  "version": "1.0.0",
+  "description": "Production-ready 9-step development workflow with specialized agents, quality gates, and git worktree integration. Features 12 specialized agents, 17 reusable skills, and comprehensive quality gates for enterprise software development.",
+  "author": {
+    "name": "Nine-Step Workflow Team",
+    "email": "contact@example.com"
+  },
+  "homepage": "https://github.com/your-org/nine-step-workflow-plugin",
+  "repository": "https://github.com/your-org/nine-step-workflow-plugin",
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "agents",
+    "quality-gates",
+    "git-worktree",
+    "development",
+    "planning",
+    "code-review",
+    "testing",
+    "documentation",
+    "phase-decomposition",
+    "risk-assessment",
+    "architecture",
+    "security",
+    "best-practices"
+  ]
+}

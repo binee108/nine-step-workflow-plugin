@@ -1,0 +1,59 @@
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.vim/
+
+# Logs
+*.log
+logs/
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Test Artifacts
+.test/
+*.test.md
+
+# Build Artifacts
+dist/
+build/
+*.zip
+*.tar.gz
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node (if used for tooling)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python (if used for tooling)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+ENV/
+
+# Plugin Development
+.claude-plugin-dev/
+test-projects/

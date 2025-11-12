@@ -1,0 +1,46 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "notification",
+            "message": "✅ Code modified - remember to run tests before committing"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash.*commit",
+        "hooks": [
+          {
+            "type": "notification",
+            "message": "🎯 Commit created - ensure all quality gates passed before merge"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "notification",
+            "message": "🎯 9-Step Workflow Active: Plan → Review → Approve → Code → Review → Docs → Review → Test → Commit"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "notification",
+            "message": "⚠️ Remember: Check worktree path before modifying files"
+          }
+        ]
+      }
+    ]
+  }
+}

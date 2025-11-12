@@ -1,0 +1,166 @@
+# MIT License
+
+Copyright (c) 2025 Claude Code Agent Template Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Additional Terms for Template Usage
+
+### What This Means for You
+
+#### ✅ You CAN:
+
+- **Use commercially** - Deploy in production, build products, offer services
+- **Modify freely** - Adapt agents, change workflow, add custom skills
+- **Distribute** - Share with team, clients, or publicly
+- **Sublicense** - Include in your own products or templates
+- **Remove attribution** - Not required (but appreciated!)
+- **Fork and build upon** - Create derived template systems
+
+#### ⚠️ You SHOULD (Recommended but not required):
+
+- **Keep this license** in your customized versions
+- **Credit in documentation** if sharing publicly
+- **Contribute improvements** back to community
+- **Share interesting customizations** as examples
+
+#### 🚫 You CANNOT:
+
+- **Hold authors liable** - Use at your own risk, no warranties
+- **Use contributor names** for endorsement without permission
+- **Claim exclusive rights** - Others can use the same templates
+
+### What This Does NOT Cover
+
+This license covers the **template system, agent configurations, workflow documentation, and skills**.
+
+It does NOT cover:
+- Your project code created using these templates
+- Your custom agents or skills you create
+- Your proprietary business logic
+- Your domain-specific customizations
+
+You retain full ownership of your work. This license only applies to the template files themselves.
+
+### Customization and Distribution
+
+When distributing your customized version:
+
+**Required**: Include this license file (or equivalent MIT License notice)
+**Recommended**: Note that it's based on "Claude Code Agent Template System"
+**Optional**: Share your improvements with the community
+
+### Example Attribution (Optional)
+
+If you'd like to credit the templates (appreciated but not required), you can add:
+
+**In Documentation**:
+```markdown
+This project uses the [Claude Code Agent Template System](link)
+for AI-assisted development workflows. (MIT License)
+```
+
+**In README**:
+```markdown
+## Development Workflow
+
+Built using Claude Code with agent templates. See [CLAUDE.md](CLAUDE.md) for details.
+```
+
+**In Code Comments**:
+```python
+# Agent configuration adapted from Claude Code Agent Template System
+# https://github.com/your-repo/claude-agent-templates
+```
+
+### For Commercial Products
+
+You can absolutely use these templates in commercial products:
+
+- SaaS platforms
+- Consulting services
+- Training courses
+- Development tools
+- Packaged products
+
+No royalties, no fees, no permission needed.
+
+If your commercial product **is** a template system (competing product), that's allowed too under MIT License. We'd appreciate a mention but it's not required.
+
+### Patents
+
+We make no patent claims. If you implement novel techniques from these templates, patent rights are yours.
+
+### Trademark
+
+"Claude" and "Claude Code" are trademarks of Anthropic. This license does not grant trademark rights.
+
+You cannot imply that Anthropic endorses your project, but you can accurately describe that your project uses Claude Code CLI.
+
+### Contributor Rights
+
+By contributing to this template system, you agree:
+
+- Your contributions are your original work or properly licensed
+- You grant the same MIT License rights to your contributions
+- You have the right to make the contribution
+
+### Version History
+
+**1.0.0** (2025-11-10): Initial release with MIT License
+
+---
+
+## Why MIT License?
+
+We chose MIT License because:
+
+1. **Maximum Freedom** - Use however you want
+2. **Simple & Clear** - Easy to understand
+3. **Permissive** - Compatible with most projects
+4. **Industry Standard** - Widely recognized and accepted
+5. **Commercial Friendly** - No restrictions on business use
+
+## Questions?
+
+**Can I use this in a closed-source project?**
+Yes, absolutely. MIT allows proprietary use.
+
+**Do I need to open-source my customizations?**
+No. Your customizations are yours to keep private or share.
+
+**Can I sell consulting based on these templates?**
+Yes. Offer services, training, customization - all allowed.
+
+**What if I found a bug?**
+Report it! But remember "no warranty" - use at your own risk.
+
+**Can I contribute improvements?**
+Please do! Contributions welcome under same MIT terms.
+
+**Can I create a competing template system?**
+Yes, but we hope you'll contribute instead!
+
+---
+
+**Enjoy building great software with AI assistance!**
+
+For questions about licensing, open an issue or discussion.
