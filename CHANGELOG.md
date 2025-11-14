@@ -5,6 +5,47 @@ All notable changes to the Nine-Step Workflow Plugin will be documented in this 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-11-13
+
+### 🆕 Added
+
+#### Plugin Update Management System
+- **`/plugin-update` command**: Automated plugin update workflow
+  - Check for latest version from GitHub
+  - Display release notes before updating
+  - Interactive confirmation with progress feedback
+  - Automatic git pull from repository
+  - Version tracking and comparison
+- **Version configuration file** (`.version.json`):
+  - Current version tracking
+  - Repository information
+  - Auto-update check settings (configurable interval)
+  - Last check timestamp
+- **Version check utility** (`scripts/check-version.sh`):
+  - Standalone version checker script
+  - Supports `--check-only` and `--force` flags
+  - Semantic version comparison
+  - Colored CLI output
+  - GitHub API integration
+- **Automatic update notifications**: Silent background check every 7 days
+
+#### Enhanced Features
+- **plugin-setup skill**: Interactive plugin setup wizard with user customization
+- **interactive-questions skill**: Enhanced with AskUserQuestion tool integration
+  - Multi-select support for non-exclusive choices
+  - Better question structuring
+  - Improved clarification workflows
+
+### 🔧 Changed
+- Updated repository URLs to `binee108/nine-step-workflow-plugin`
+- Enhanced README with plugin update instructions
+- Updated version from 1.0.0 to 1.1.0
+- Added version tracking to `.gitignore` (temporary files only)
+
+### 🐛 Fixed
+- Plugin installation documentation improvements
+- Repository metadata corrections in plugin.json
+
 ## [1.0.0] - 2025-01-10
 
 ### 🎉 Initial Release

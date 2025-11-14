@@ -1,455 +1,455 @@
-# Installation Guide
+# 설치 가이드
 
-Complete guide for installing and configuring the Nine-Step Workflow Plugin.
+Nine-Step Workflow 플러그인 설치 및 구성을 위한 완전한 가이드입니다.
 
-## 📋 Prerequisites
+## 📋 사전 요구사항
 
-- **Claude Code**: Version 1.0.0 or higher
-- **Git**: Version 2.25 or higher (for worktree features)
-- **Operating System**: macOS, Linux, or Windows with WSL
+- **Claude Code**: 버전 1.0.0 이상
+- **Git**: 버전 2.25 이상 (worktree 기능용)
+- **운영 체제**: macOS, Linux, 또는 WSL이 있는 Windows
 
-## 🚀 Installation Methods
+## 🚀 설치 방법
 
-### Method 1: Claude Code CLI (Recommended)
+### 방법 1: Claude Code CLI (권장)
 
 ```bash
-# Install from Claude Code marketplace
+# Claude Code 마켓플레이스에서 설치
 claude plugin install nine-step-workflow
 
-# Verify installation
+# 설치 확인
 claude plugin list
 
-# Expected output:
+# 예상 출력:
 # ✓ nine-step-workflow v1.0.0
-#   Production-ready 9-step development workflow
+#   프로덕션 수준의 9단계 개발 워크플로우
 ```
 
-### Method 2: Manual Installation
+### 방법 2: 수동 설치
 
 ```bash
-# 1. Download the plugin
+# 1. 플러그인 다운로드
 git clone https://github.com/your-org/nine-step-workflow-plugin.git
 
-# 2. Create plugins directory if it doesn't exist
+# 2. 플러그인 디렉토리가 없으면 생성
 mkdir -p ~/.claude/plugins
 
-# 3. Copy plugin to Claude Code plugins directory
+# 3. Claude Code 플러그인 디렉토리에 복사
 cp -r nine-step-workflow-plugin ~/.claude/plugins/nine-step-workflow
 
-# 4. Verify installation
+# 4. 설치 확인
 claude plugin list
 ```
 
-### Method 3: Development Installation (For Contributors)
+### 방법 3: 개발용 설치 (기여자용)
 
 ```bash
-# 1. Clone the repository
+# 1. 저장소 복제
 git clone https://github.com/your-org/nine-step-workflow-plugin.git
 cd nine-step-workflow-plugin
 
-# 2. Symlink for development (changes reflect immediately)
+# 2. 개발용 심볼릭 링크 (변경사항이 즉시 반영됨)
 ln -s $(pwd) ~/.claude/plugins/nine-step-workflow
 
-# 3. Test changes
+# 3. 변경사항 테스트
 claude plugin reload nine-step-workflow
 ```
 
-## ⚙️ Configuration
+## ⚙️ 설정
 
-### Step 1: Create Project Configuration
+### 1단계: 프로젝트 설정 생성
 
-Create a `CLAUDE.md` file in your project root:
+프로젝트 루트에 `CLAUDE.md` 파일 생성:
 
 ```markdown
-# Claude Code Guidelines for MyProject
+# MyProject용 Claude Code 가이드라인
 
-## Project Information
-- **Project Name**: MyAwesomeApp
-- **Description**: Brief project description
-- **Tech Stack**: Python Flask, React, PostgreSQL
-- **Version**: 1.0.0
+## 프로젝트 정보
+- **프로젝트 이름**: MyAwesomeApp
+- **설명**: 프로젝트 간단한 설명
+- **기술 스택**: Python Flask, React, PostgreSQL
+- **버전**: 1.0.0
 
-## Tech Stack Details
+## 기술 스택 세부사항
 
-### Backend
-- Framework: Flask 2.3.0
-- Database: PostgreSQL 14
+### 백엔드
+- 프레임워크: Flask 2.3.0
+- 데이터베이스: PostgreSQL 14
 - ORM: SQLAlchemy 2.0
-- API Style: RESTful JSON
+- API 스타일: RESTful JSON
 
-### Frontend
-- Framework: React 18
-- State Management: Redux Toolkit
-- UI Library: Material-UI 5
-- Build Tool: Vite
+### 프론트엔드
+- 프레임워크: React 18
+- 상태 관리: Redux Toolkit
+- UI 라이브러리: Material-UI 5
+- 빌드 도구: Vite
 
-### Testing
-- Backend: pytest, pytest-cov
-- Frontend: Jest, React Testing Library
+### 테스트
+- 백엔드: pytest, pytest-cov
+- 프론트엔드: Jest, React Testing Library
 - E2E: Playwright
 
-## Coding Standards
+## 코딩 표준
 
-### General Rules
-- Max function length: 50 lines
-- Max file length: 300 lines
-- Use type hints (Python) / TypeScript
-- All public APIs must have docstrings
+### 일반 규칙
+- 최대 함수 길이: 50줄
+- 최대 파일 길이: 300줄
+- 타입 힌트 사용 (Python) / TypeScript
+- 모든 공개 API는 docstring이 있어야 함
 
-### Python Standards
-- Follow PEP 8
-- Use Black for formatting
-- Use pylint for linting
-- Type hints required
+### Python 표준
+- PEP 8 준수
+- 포매팅은 Black 사용
+- 린팅은 pylint 사용
+- 타입 힌트 필수
 
-### JavaScript/TypeScript Standards
-- Follow ESLint Standard config
-- Use Prettier for formatting
-- Functional components only (React)
-- Hooks for state management
+### JavaScript/TypeScript 표준
+- ESLint Standard 설정 준수
+- 포매팅은 Prettier 사용
+- 함수형 컴포넌트만 사용 (React)
+- 상태 관리는 Hooks 사용
 
-## Development Workflow
+## 개발 워크플로우
 
-### Feature Development
-1. Create issue in GitHub
-2. Run `/workflow-exec` with feature description
-3. Follow 9-step workflow
-4. Merge after all quality gates pass
+### 기능 개발
+1. GitHub에서 이슈 생성
+2. 기능 설명과 함께 `/workflow-exec` 실행
+3. 9단계 워크플로우 따르기
+4. 모든 품질 게이트 통과 후 병합
 
-### Bug Fixes
-1. Reproduce bug
-2. Create failing test
-3. Run `/workflow-exec` with bug description
-4. Fix must pass new test
+### 버그 수정
+1. 버그 재현
+2. 실패하는 테스트 생성
+3. 버그 설명과 함께 `/workflow-exec` 실행
+4. 수정은 새 테스트를 통과해야 함
 
-## Security Requirements
+## 보안 요구사항
 
-### Authentication
-- JWT tokens with 15-minute expiration
-- Refresh tokens with 7-day expiration
-- Password minimum 12 characters
+### 인증
+- 15분 만료 JWT 토큰
+- 7일 만료 리프레시 토큰
+- 최소 12자 이상 비밀번호
 
-### Input Validation
-- All user input validated with Pydantic (backend)
-- All user input validated with Zod (frontend)
-- SQL parameterization required (no string concatenation)
+### 입력 검증
+- 모든 사용자 입력은 Pydantic으로 검증 (백엔드)
+- 모든 사용자 입력은 Zod로 검증 (프론트엔드)
+- SQL 파라미터화 필수 (문자열 연결 금지)
 
-### API Security
-- Rate limiting: 100 req/min per IP
-- CORS: whitelist specific origins
-- HTTPS required in production
+### API 보안
+- Rate limiting: IP당 100 req/min
+- CORS: 특정 origin만 화이트리스트
+- 프로덕션에서 HTTPS 필수
 
-## Testing Requirements
+## 테스트 요구사항
 
-### Code Coverage
-- Minimum: 80% overall
-- Critical paths: 100% coverage
-- All public APIs: 100% coverage
+### 코드 커버리지
+- 최소: 전체 80%
+- 중요 경로: 100% 커버리지
+- 모든 공개 API: 100% 커버리지
 
-### Test Strategy
-- Unit tests for all business logic
-- Integration tests for API endpoints
-- E2E tests for critical user flows
+### 테스트 전략
+- 모든 비즈니스 로직에 대한 단위 테스트
+- API 엔드포인트에 대한 통합 테스트
+- 중요한 사용자 플로우에 대한 E2E 테스트
 
-## Documentation Standards
+## 문서화 표준
 
-### Code Comments
-- All public functions/classes documented
-- Complex algorithms explained
-- TODOs tracked in GitHub issues
+### 코드 주석
+- 모든 공개 함수/클래스 문서화
+- 복잡한 알고리즘 설명
+- TODO는 GitHub 이슈로 추적
 
-### API Documentation
-- OpenAPI/Swagger spec maintained
-- All endpoints documented
-- Request/response examples provided
+### API 문서
+- OpenAPI/Swagger 사양 유지
+- 모든 엔드포인트 문서화
+- 요청/응답 예제 제공
 
-## Deployment Process
+## 배포 프로세스
 
-### Environments
-- Development: Local
-- Staging: staging.myapp.com
-- Production: myapp.com
+### 환경
+- 개발: Local
+- 스테이징: staging.myapp.com
+- 프로덕션: myapp.com
 
-### Deployment Steps
-1. All tests pass
-2. Code reviewed and approved
-3. Staging deployment and smoke tests
-4. Production deployment
-5. Monitor for 30 minutes
+### 배포 단계
+1. 모든 테스트 통과
+2. 코드 리뷰 및 승인
+3. 스테이징 배포 및 스모크 테스트
+4. 프로덕션 배포
+5. 30분간 모니터링
 
-## Language Settings
+## 언어 설정
 
-- **Conversation Language**: English
-- **Code Language**: English (always)
-- **Documentation Language**: English
-- **Comment Language**: English (always)
+- **대화 언어**: Korean
+- **코드 언어**: English (항상)
+- **문서 언어**: Korean
+- **주석 언어**: English (항상)
 ```
 
-### Step 2: Add Feature Tags to Existing Code
+### 2단계: 기존 코드에 기능 태그 추가
 
-Tag your existing code for fast discovery:
+빠른 발견을 위해 기존 코드에 태그 추가:
 
 ```python
-# Example: Python backend service
+# 예제: Python 백엔드 서비스
 # @FEAT:user-authentication @COMP:service @TYPE:core @DEPS:database
 class AuthService:
-    """Handle user authentication and authorization."""
+    """사용자 인증 및 권한 부여 처리."""
 
     # @FEAT:user-authentication @COMP:service @TYPE:core
     def authenticate(self, email: str, password: str) -> User:
-        """Authenticate user with email and password."""
-        # Implementation...
+        """이메일과 비밀번호로 사용자 인증."""
+        # 구현...
 ```
 
 ```javascript
-// Example: React frontend component
+// 예제: React 프론트엔드 컴포넌트
 // @FEAT:user-profile @COMP:component @TYPE:ui
 export function UserProfile({ userId }) {
   // @FEAT:user-profile @COMP:component @TYPE:helper
   const fetchUserData = async (id) => {
-    // Implementation...
+    // 구현...
   };
 }
 ```
 
-### Step 3: Create Feature Catalog
+### 3단계: 기능 카탈로그 생성
 
-Create `docs/FEATURE_CATALOG.md`:
+`docs/FEATURE_CATALOG.md` 생성:
 
 ```markdown
-# Feature Catalog
+# 기능 카탈로그
 
-## Authentication Features
+## 인증 기능
 
 ### user-authentication
-- **Description**: User login, logout, JWT token management
-- **Components**: AuthService, LoginForm, AuthMiddleware
-- **Tags**: @FEAT:user-authentication
-- **Files**:
+- **설명**: 사용자 로그인, 로그아웃, JWT 토큰 관리
+- **컴포넌트**: AuthService, LoginForm, AuthMiddleware
+- **태그**: @FEAT:user-authentication
+- **파일**:
   - backend/services/auth_service.py
   - frontend/components/LoginForm.jsx
   - backend/middleware/auth_middleware.py
 
 ### password-reset
-- **Description**: Password reset via email
-- **Components**: PasswordResetService, ResetForm
-- **Tags**: @FEAT:password-reset
-- **Dependencies**: @FEAT:user-authentication, email-service
+- **설명**: 이메일을 통한 비밀번호 재설정
+- **컴포넌트**: PasswordResetService, ResetForm
+- **태그**: @FEAT:password-reset
+- **의존성**: @FEAT:user-authentication, email-service
 
-## User Management Features
+## 사용자 관리 기능
 
 ### user-profile
-- **Description**: User profile viewing and editing
-- **Components**: UserService, ProfilePage, ProfileForm
-- **Tags**: @FEAT:user-profile
-- **Files**:
+- **설명**: 사용자 프로필 보기 및 수정
+- **컴포넌트**: UserService, ProfilePage, ProfileForm
+- **태그**: @FEAT:user-profile
+- **파일**:
   - backend/services/user_service.py
   - frontend/pages/ProfilePage.jsx
 
-## Data Features
+## 데이터 기능
 
 ### data-export
-- **Description**: Export user data in various formats
-- **Components**: ExportService, ExportButton
-- **Tags**: @FEAT:data-export
-- **Dependencies**: @FEAT:user-profile
+- **설명**: 다양한 형식으로 사용자 데이터 내보내기
+- **컴포넌트**: ExportService, ExportButton
+- **태그**: @FEAT:data-export
+- **의존성**: @FEAT:user-profile
 
-[Add more features...]
+[더 많은 기능 추가...]
 ```
 
-### Step 4: Configure Git Worktree Directory
+### 4단계: Git Worktree 디렉토리 설정
 
-Add to your `.gitignore`:
+`.gitignore`에 추가:
 
 ```bash
-# Git worktrees
+# Git worktree
 .worktree/
 
-# Planning documents
+# 계획 문서
 .plan/
 
-# Temporary test files
+# 임시 테스트 파일
 .test/
 ```
 
-### Step 5: Test Installation
+### 5단계: 설치 테스트
 
 ```bash
-# Navigate to your project
+# 프로젝트로 이동
 cd ~/my-project
 
-# Start Claude Code
+# Claude Code 시작
 claude
 
-# Test the plugin
-# > /workflow-exec "Add a simple feature to test the plugin"
+# 플러그인 테스트
+# > /workflow-exec "플러그인 테스트를 위한 간단한 기능 추가"
 ```
 
-Expected behavior:
-1. `project-planner` agent activates
-2. Creates implementation plan
-3. `plan-reviewer` validates
-4. Asks for your approval
-5. Creates git worktree
-6. Proceeds with implementation
+예상되는 동작:
+1. `project-planner` 에이전트 활성화
+2. 구현 계획 생성
+3. `plan-reviewer`가 검증
+4. 사용자 승인 요청
+5. Git worktree 생성
+6. 구현 진행
 
-## 🔧 Troubleshooting
+## 🔧 문제 해결
 
-### Issue: Plugin not found
+### 문제: 플러그인을 찾을 수 없음
 
 ```bash
-# Check installation
+# 설치 확인
 ls ~/.claude/plugins/nine-step-workflow
 
-# If missing, reinstall
+# 없으면 재설치
 claude plugin install nine-step-workflow
 ```
 
-### Issue: Agents not activating
+### 문제: 에이전트가 활성화되지 않음
 
-**Symptom**: Claude doesn't use specialized agents
+**증상**: Claude가 전문화된 에이전트를 사용하지 않음
 
-**Solution**:
-1. Verify plugin is enabled: `claude plugin list`
-2. Check plugin.json is valid: `cat ~/.claude/plugins/nine-step-workflow/.claude-plugin/plugin.json`
-3. Reload plugin: `claude plugin reload nine-step-workflow`
+**해결책**:
+1. 플러그인이 활성화되어 있는지 확인: `claude plugin list`
+2. plugin.json이 유효한지 확인: `cat ~/.claude/plugins/nine-step-workflow/.claude-plugin/plugin.json`
+3. 플러그인 재로드: `claude plugin reload nine-step-workflow`
 
-### Issue: Tag-based search not working
+### 문제: 태그 기반 검색이 작동하지 않음
 
-**Symptom**: Agents can't find existing code
+**증상**: 에이전트가 기존 코드를 찾지 못함
 
-**Solution**:
-1. Add feature tags to your code (see Step 2)
-2. Create `docs/FEATURE_CATALOG.md` (see Step 3)
-3. Verify tags with: `grep -r "@FEAT:" --include="*.py" --include="*.js"`
+**해결책**:
+1. 코드에 기능 태그 추가 (2단계 참조)
+2. `docs/FEATURE_CATALOG.md` 생성 (3단계 참조)
+3. 태그 확인: `grep -r "@FEAT:" --include="*.py" --include="*.js"`
 
-### Issue: Worktree creation fails
+### 문제: Worktree 생성 실패
 
-**Symptom**: Error creating git worktree
+**증상**: Git worktree 생성 시 오류
 
-**Solution**:
-1. Check git version: `git --version` (need 2.25+)
-2. Ensure you're in a git repository: `git status`
-3. Create `.worktree/` directory: `mkdir .worktree`
-4. Add to `.gitignore`: `echo ".worktree/" >> .gitignore`
+**해결책**:
+1. Git 버전 확인: `git --version` (2.25+ 필요)
+2. Git 저장소인지 확인: `git status`
+3. `.worktree/` 디렉토리 생성: `mkdir .worktree`
+4. `.gitignore`에 추가: `echo ".worktree/" >> .gitignore`
 
-### Issue: Skills not loading
+### 문제: 스킬이 로드되지 않음
 
-**Symptom**: Agent says "Skill not found"
+**증상**: 에이전트가 "Skill not found" 메시지 표시
 
-**Solution**:
-1. Check skills directory exists:
+**해결책**:
+1. 스킬 디렉토리 존재 확인:
    ```bash
    ls ~/.claude/plugins/nine-step-workflow/skills/
    ```
-2. Verify SKILL.md files:
+2. SKILL.md 파일 확인:
    ```bash
    find ~/.claude/plugins/nine-step-workflow/skills -name "SKILL.md"
    ```
-3. Reinstall plugin if files are missing
+3. 파일이 없으면 플러그인 재설치
 
-### Issue: Commands not working
+### 문제: 명령어가 작동하지 않음
 
-**Symptom**: `/workflow-exec` not recognized
+**증상**: `/workflow-exec`가 인식되지 않음
 
-**Solution**:
-1. Check commands directory:
+**해결책**:
+1. 명령어 디렉토리 확인:
    ```bash
    ls ~/.claude/plugins/nine-step-workflow/commands/
    ```
-2. Verify frontmatter in command files
-3. Reload Claude Code
-4. Try: `claude plugin reload nine-step-workflow`
+2. 명령어 파일의 frontmatter 확인
+3. Claude Code 재로드
+4. 시도: `claude plugin reload nine-step-workflow`
 
-## 🎓 Next Steps
+## 🎓 다음 단계
 
-After installation:
+설치 후:
 
-1. **Read the Quick Start**: See [README.md](./README.md#quick-start)
-2. **Try Examples**: Test with simple features first
-3. **Customize Configuration**: Adapt `CLAUDE.md` to your project
-4. **Add Feature Tags**: Tag existing code for better discovery
-5. **Join Community**: [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions)
+1. **빠른 시작 읽기**: [README.md](./README.md#빠른-시작) 참조
+2. **예제 시도**: 먼저 간단한 기능으로 테스트
+3. **설정 커스터마이징**: 프로젝트에 맞게 `CLAUDE.md` 조정
+4. **기능 태그 추가**: 더 나은 발견을 위해 기존 코드에 태그 추가
+5. **커뮤니티 참여**: [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions)
 
-## 🔄 Updating
+## 🔄 업데이트
 
-### Update via CLI
+### CLI를 통한 업데이트
 
 ```bash
-# Check for updates
+# 업데이트 확인
 claude plugin update nine-step-workflow
 
-# View changelog
+# 변경 로그 확인
 cat ~/.claude/plugins/nine-step-workflow/CHANGELOG.md
 ```
 
-### Update Manually
+### 수동 업데이트
 
 ```bash
-# Backup current version
+# 현재 버전 백업
 cp -r ~/.claude/plugins/nine-step-workflow ~/.claude/plugins/nine-step-workflow.backup
 
-# Download new version
+# 새 버전 다운로드
 git clone https://github.com/your-org/nine-step-workflow-plugin.git
 
-# Replace old version
+# 이전 버전 교체
 rm -rf ~/.claude/plugins/nine-step-workflow
 cp -r nine-step-workflow-plugin ~/.claude/plugins/nine-step-workflow
 
-# Reload plugin
+# 플러그인 재로드
 claude plugin reload nine-step-workflow
 ```
 
-## 🗑️ Uninstallation
+## 🗑️ 제거
 
-### Via CLI
+### CLI를 통한 제거
 
 ```bash
 claude plugin uninstall nine-step-workflow
 ```
 
-### Manual Uninstallation
+### 수동 제거
 
 ```bash
-# Remove plugin directory
+# 플러그인 디렉토리 제거
 rm -rf ~/.claude/plugins/nine-step-workflow
 
-# Verify removal
+# 제거 확인
 claude plugin list
 ```
 
-### Cleanup Project Configuration (Optional)
+### 프로젝트 설정 정리 (선택사항)
 
-If you want to completely remove plugin traces from your project:
+프로젝트에서 플러그인 흔적을 완전히 제거하려면:
 
 ```bash
-# Remove planning documents
+# 계획 문서 제거
 rm -rf .plan/
 
-# Remove worktrees
+# Worktree 제거
 git worktree list | grep ".worktree" | awk '{print $1}' | xargs -I {} git worktree remove {}
 
-# Remove worktree directory
+# Worktree 디렉토리 제거
 rm -rf .worktree/
 
-# Remove test directory
+# 테스트 디렉토리 제거
 rm -rf .test/
 
-# Remove feature catalog (if not needed)
+# 기능 카탈로그 제거 (필요 없으면)
 rm docs/FEATURE_CATALOG.md
 ```
 
-**Note**: Keep your `CLAUDE.md` as it may have project-specific guidelines.
+**참고**: `CLAUDE.md`는 프로젝트별 가이드라인이 있을 수 있으므로 보관하세요.
 
-## 🆘 Support
+## 🆘 지원
 
-If you encounter issues:
+문제가 발생하면:
 
-1. **Check Documentation**: [README.md](./README.md), [CONTRIBUTING.md](./CONTRIBUTING.md)
-2. **Search Issues**: [GitHub Issues](https://github.com/your-org/nine-step-workflow-plugin/issues)
-3. **Ask Community**: [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions)
-4. **Report Bug**: Create a detailed issue with reproduction steps
+1. **문서 확인**: [README.md](./README.md), [CONTRIBUTING.md](./CONTRIBUTING.md)
+2. **이슈 검색**: [GitHub Issues](https://github.com/your-org/nine-step-workflow-plugin/issues)
+3. **커뮤니티 질문**: [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions)
+4. **버그 보고**: 재현 단계와 함께 상세한 이슈 생성
 
 ---
 
-**Installation complete! Ready to build with the 9-step workflow.** 🚀
+**설치 완료! 9단계 워크플로우로 개발할 준비가 되었습니다.** 🚀

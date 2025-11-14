@@ -1,202 +1,202 @@
-# Contributing to Nine-Step Workflow Plugin
+# Nine-Step Workflow 플러그인 기여하기
 
-Thank you for your interest in contributing! This document provides guidelines and instructions for contributing to the Nine-Step Workflow Plugin.
+기여에 관심을 가져주셔서 감사합니다! 이 문서는 Nine-Step Workflow 플러그인에 기여하기 위한 가이드라인과 지침을 제공합니다.
 
-## 🎯 Ways to Contribute
+## 🎯 기여 방법
 
-- **Report Bugs**: Submit detailed bug reports with reproduction steps
-- **Suggest Features**: Propose new agents, skills, or workflow improvements
-- **Improve Documentation**: Fix typos, clarify instructions, add examples
-- **Add Agents**: Create new specialized agents for specific tasks
-- **Add Skills**: Develop reusable skills that multiple agents can use
-- **Fix Issues**: Pick up issues labeled `good-first-issue` or `help-wanted`
-- **Share Usage Patterns**: Document effective workflow patterns you discover
+- **버그 보고**: 재현 단계와 함께 상세한 버그 보고서 제출
+- **기능 제안**: 새로운 에이전트, 스킬 또는 워크플로우 개선 제안
+- **문서 개선**: 오타 수정, 설명 명확화, 예제 추가
+- **에이전트 추가**: 특정 작업을 위한 새로운 전문화된 에이전트 생성
+- **스킬 추가**: 여러 에이전트가 사용할 수 있는 재사용 가능한 스킬 개발
+- **이슈 수정**: `good-first-issue` 또는 `help-wanted` 라벨이 붙은 이슈 선택
+- **사용 패턴 공유**: 발견한 효과적인 워크플로우 패턴 문서화
 
-## 🚀 Getting Started
+## 🚀 시작하기
 
-### 1. Fork and Clone
+### 1. Fork 및 Clone
 
 ```bash
-# Fork the repository on GitHub
-# Then clone your fork
+# GitHub에서 저장소 Fork
+# 그런 다음 fork를 clone
 git clone https://github.com/YOUR-USERNAME/nine-step-workflow-plugin.git
 cd nine-step-workflow-plugin
 ```
 
-### 2. Install for Development
+### 2. 개발용 설치
 
 ```bash
-# Create a symlink to your local development version
+# 로컬 개발 버전에 대한 심볼릭 링크 생성
 ln -s $(pwd) ~/.claude/plugins/nine-step-workflow
 
-# Or copy for testing
+# 또는 테스트를 위해 복사
 cp -r . ~/.claude/plugins/nine-step-workflow
 ```
 
-### 3. Make Changes
+### 3. 변경하기
 
-Edit files in your local repository:
-- `agents/` - Agent implementations
-- `skills/` - Reusable skill modules
-- `commands/` - Workflow commands
-- `hooks/` - Event handlers
+로컬 저장소에서 파일 편집:
+- `agents/` - 에이전트 구현
+- `skills/` - 재사용 가능한 스킬 모듈
+- `commands/` - 워크플로우 명령어
+- `hooks/` - 이벤트 핸들러
 
-### 4. Test Your Changes
+### 4. 변경사항 테스트
 
 ```bash
-# Reload the plugin in Claude Code
+# Claude Code에서 플러그인 재로드
 claude plugin reload nine-step-workflow
 
-# Test with a sample project
+# 샘플 프로젝트로 테스트
 cd ~/test-project
 claude
-# > Test your changes interactively
+# > 변경사항을 대화형으로 테스트
 ```
 
-### 5. Submit Pull Request
+### 5. Pull Request 제출
 
 ```bash
-# Create a feature branch
+# 기능 브랜치 생성
 git checkout -b feature/your-feature-name
 
-# Commit your changes
+# 변경사항 커밋
 git add .
 git commit -m "feat: add your feature description"
 
-# Push to your fork
+# Fork에 푸시
 git push origin feature/your-feature-name
 
-# Create pull request on GitHub
+# GitHub에서 pull request 생성
 ```
 
-## 📋 Development Guidelines
+## 📋 개발 가이드라인
 
-### Agent Development
+### 에이전트 개발
 
-**File Structure:**
+**파일 구조:**
 ```markdown
 ---
 name: agent-name
-description: Brief description (1-2 sentences)
+description: 간단한 설명 (1-2문장)
 tools: Read, Write, Edit, Grep, Glob, Bash
-model: sonnet  # or haiku
+model: sonnet  # 또는 haiku
 ---
 
-# Agent Name - Role Title
+# Agent Name - 역할 제목
 
-## 🎭 Agent Persona
-**Icon**: 🔧
-**Job**: Professional Title
-**Area of Expertise**: Specific skills
-**Role**: What this agent does
-**Goal**: Ultimate objective
+## 🎭 에이전트 페르소나
+**아이콘**: 🔧
+**직무**: 전문 직함
+**전문 분야**: 특정 기술
+**역할**: 이 에이전트가 하는 일
+**목표**: 궁극적인 목적
 
-## 🌍 Language Handling
-[Language instructions]
+## 🌍 언어 처리
+[언어 지침]
 
-## 🧰 Skills & Conditional Loading
-[Skills used by this agent]
+## 🧰 스킬 및 조건부 로딩
+[이 에이전트가 사용하는 스킬]
 
-## 🎯 Your Role in 9-Step Workflow
-[Which step this agent handles]
+## 🎯 9단계 워크플로우에서의 역할
+[이 에이전트가 처리하는 단계]
 
-## Core Mission
-[Detailed responsibilities]
+## 핵심 임무
+[상세한 책임]
 
-## Output Format
-[Expected outputs]
+## 출력 형식
+[예상 출력]
 
-## Success Criteria
-[How to evaluate success]
+## 성공 기준
+[성공 평가 방법]
 ```
 
-**Best Practices:**
-- Use clear, action-oriented names (e.g., `database-migrator`, `api-designer`)
-- Specify exact tools needed (minimize unnecessary tool access)
-- Choose appropriate model (Sonnet for complex reasoning, Haiku for execution)
-- Load skills conditionally (only when needed)
-- Include concrete examples in documentation
-- Define clear success criteria
+**모범 사례:**
+- 명확하고 행동 지향적인 이름 사용 (예: `database-migrator`, `api-designer`)
+- 필요한 정확한 도구 지정 (불필요한 도구 접근 최소화)
+- 적절한 모델 선택 (복잡한 추론은 Sonnet, 실행은 Haiku)
+- 조건부로 스킬 로드 (필요할 때만)
+- 문서에 구체적인 예제 포함
+- 명확한 성공 기준 정의
 
-**Model Selection:**
+**모델 선택:**
 ```
-Sonnet: Architecture, design, complex decisions, security analysis
-Haiku: Rule-following, repetitive tasks, simple execution
+Sonnet: 아키텍처, 설계, 복잡한 결정, 보안 분석
+Haiku: 규칙 준수, 반복 작업, 간단한 실행
 ```
 
-### Skill Development
+### 스킬 개발
 
-**Directory Structure:**
+**디렉토리 구조:**
 ```
 skills/
 └── your-skill/
     └── SKILL.md
 ```
 
-**File Structure:**
+**파일 구조:**
 ```markdown
 ---
 name: your-skill
-description: Brief description
-applies_to: ["agent1", "agent2"]  # Which agents use this
+description: 간단한 설명
+applies_to: ["agent1", "agent2"]  # 이 스킬을 사용하는 에이전트
 ---
 
 # Skill Name
 
-## 🎯 Purpose
-[What problem this skill solves]
+## 🎯 목적
+[이 스킬이 해결하는 문제]
 
-## 📋 When to Use
-[Specific scenarios]
+## 📋 사용 시기
+[특정 시나리오]
 
-## 🛠️ How to Use
-[Step-by-step instructions]
+## 🛠️ 사용 방법
+[단계별 지침]
 
-## 💡 Examples
+## 💡 예제
 
-### Example 1: [Scenario]
-[Code or instructions]
+### 예제 1: [시나리오]
+[코드 또는 지침]
 
-### Example 2: [Scenario]
-[Code or instructions]
+### 예제 2: [시나리오]
+[코드 또는 지침]
 
-## ⚠️ Common Pitfalls
-[What to avoid]
+## ⚠️ 일반적인 함정
+[피해야 할 것]
 
-## 🔗 Related Skills
-[Other skills that complement this one]
+## 🔗 관련 스킬
+[이것을 보완하는 다른 스킬]
 ```
 
-**Best Practices:**
-- Make skills focused and reusable
-- Provide 2-3 concrete examples
-- Document common pitfalls
-- Link to related skills
-- Include metrics when applicable (e.g., "30s vs 5min")
+**모범 사례:**
+- 스킬을 집중적이고 재사용 가능하게 만들기
+- 2-3개의 구체적인 예제 제공
+- 일반적인 함정 문서화
+- 관련 스킬에 링크
+- 해당하는 경우 메트릭 포함 (예: "30초 vs 5분")
 
-### Command Development
+### 명령어 개발
 
-**File Structure:**
+**파일 구조:**
 ```markdown
 ---
-description: Brief command description
+description: 간단한 명령어 설명
 usage: /command-name [arguments]
 ---
 
-# Command Implementation
+# 명령어 구현
 
-[Command prompt and instructions]
+[명령어 프롬프트 및 지침]
 ```
 
-**Best Practices:**
-- Clear, action-oriented command names
-- Support common arguments (resume, rollback, etc.)
-- Provide helpful error messages
-- Include usage examples in description
+**모범 사례:**
+- 명확하고 행동 지향적인 명령어 이름
+- 일반적인 인수 지원 (resume, rollback 등)
+- 도움이 되는 오류 메시지 제공
+- 설명에 사용 예제 포함
 
-### Hook Development
+### Hook 개발
 
-**Add to `hooks/hooks.json`:**
+**`hooks/hooks.json`에 추가:**
 ```json
 {
   "hooks": {
@@ -206,7 +206,7 @@ usage: /command-name [arguments]
         "hooks": [
           {
             "type": "notification",
-            "message": "Helpful message"
+            "message": "도움이 되는 메시지"
           }
         ]
       }
@@ -215,56 +215,56 @@ usage: /command-name [arguments]
 }
 ```
 
-**Hook Types:**
-- `PreToolUse`: Before tool execution
-- `PostToolUse`: After tool execution
-- `UserPromptSubmit`: On user input
+**Hook 타입:**
+- `PreToolUse`: 도구 실행 전
+- `PostToolUse`: 도구 실행 후
+- `UserPromptSubmit`: 사용자 입력 시
 
-## 🧪 Testing Guidelines
+## 🧪 테스트 가이드라인
 
-### Manual Testing Checklist
+### 수동 테스트 체크리스트
 
-Before submitting a PR, test:
+PR을 제출하기 전에 테스트:
 
-**For Agents:**
-- [ ] Agent activates correctly when called
-- [ ] Agent loads required skills successfully
-- [ ] Agent produces expected output format
-- [ ] Agent handles errors gracefully
-- [ ] Agent passes work to next workflow step
+**에이전트의 경우:**
+- [ ] 호출 시 에이전트가 올바르게 활성화됨
+- [ ] 에이전트가 필요한 스킬을 성공적으로 로드함
+- [ ] 에이전트가 예상 출력 형식을 생성함
+- [ ] 에이전트가 오류를 우아하게 처리함
+- [ ] 에이전트가 다음 워크플로우 단계로 작업을 전달함
 
-**For Skills:**
-- [ ] Skill loads without errors
-- [ ] Examples in documentation work correctly
-- [ ] Multiple agents can use the skill
-- [ ] Skill provides clear error messages
+**스킬의 경우:**
+- [ ] 스킬이 오류 없이 로드됨
+- [ ] 문서의 예제가 올바르게 작동함
+- [ ] 여러 에이전트가 스킬을 사용할 수 있음
+- [ ] 스킬이 명확한 오류 메시지를 제공함
 
-**For Commands:**
-- [ ] Command parses arguments correctly
-- [ ] Command executes expected workflow
-- [ ] Command handles missing/invalid arguments
-- [ ] Command provides helpful usage info
+**명령어의 경우:**
+- [ ] 명령어가 인수를 올바르게 파싱함
+- [ ] 명령어가 예상 워크플로우를 실행함
+- [ ] 명령어가 누락/잘못된 인수를 처리함
+- [ ] 명령어가 도움이 되는 사용 정보를 제공함
 
-**For Hooks:**
-- [ ] Hook triggers on correct events
-- [ ] Hook message is clear and actionable
-- [ ] Hook doesn't interfere with workflow
+**Hook의 경우:**
+- [ ] Hook이 올바른 이벤트에서 트리거됨
+- [ ] Hook 메시지가 명확하고 실행 가능함
+- [ ] Hook이 워크플로우를 방해하지 않음
 
-### Test Projects
+### 테스트 프로젝트
 
-Create test projects for common scenarios:
+일반적인 시나리오에 대한 테스트 프로젝트 생성:
 
 ```bash
 test-projects/
-├── simple-feature/      # Single-phase feature
-├── complex-feature/     # Multi-phase feature
-├── bug-fix/            # Bug investigation and fix
-└── refactoring/        # Code restructuring
+├── simple-feature/      # 단일 단계 기능
+├── complex-feature/     # 다중 단계 기능
+├── bug-fix/            # 버그 조사 및 수정
+└── refactoring/        # 코드 재구조화
 ```
 
-## 📝 Commit Message Format
+## 📝 커밋 메시지 형식
 
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
+[Conventional Commits](https://www.conventionalcommits.org/) 준수:
 
 ```
 <type>(<scope>): <description>
@@ -274,160 +274,160 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 [optional footer]
 ```
 
-**Types:**
-- `feat`: New feature (agent, skill, command)
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `refactor`: Code refactoring
-- `test`: Test additions or fixes
-- `chore`: Maintenance tasks
+**타입:**
+- `feat`: 새 기능 (에이전트, 스킬, 명령어)
+- `fix`: 버그 수정
+- `docs`: 문서 변경
+- `refactor`: 코드 리팩토링
+- `test`: 테스트 추가 또는 수정
+- `chore`: 유지보수 작업
 
-**Examples:**
+**예제:**
 ```
-feat(agent): add database-migrator agent
+feat(agent): database-migrator 에이전트 추가
 
-Implements a specialized agent for database schema migrations
-with rollback support and validation.
+롤백 지원 및 검증이 있는 데이터베이스 스키마 마이그레이션을 위한
+전문화된 에이전트를 구현합니다.
 
-feat(skill): add sql-injection-prevention skill
+feat(skill): sql-injection-prevention 스킬 추가
 
-Provides patterns and checks to prevent SQL injection vulnerabilities.
+SQL 인젝션 취약점을 방지하기 위한 패턴 및 검사를 제공합니다.
 
-docs(readme): add troubleshooting section for worktree errors
+docs(readme): worktree 오류에 대한 문제 해결 섹션 추가
 
-fix(command): handle missing plan document in workflow-resume
+fix(command): workflow-resume에서 누락된 계획 문서 처리
 
-Gracefully handle case where plan document was deleted.
+계획 문서가 삭제된 경우를 우아하게 처리합니다.
 ```
 
-## 📚 Documentation Standards
+## 📚 문서 표준
 
-### Code Comments
+### 코드 주석
 
-**Agent Files:**
+**에이전트 파일:**
 ```markdown
-# Clear section headers
-## Subsection organization
-**Bold** for important concepts
-`code` for technical terms
+# 명확한 섹션 헤더
+## 하위 섹션 구성
+**굵게** 중요한 개념
+`코드` 기술 용어
 ```
 
-**Skill Files:**
+**스킬 파일:**
 ```markdown
-# Title matches skill name
-## Purpose (why it exists)
-## When to Use (specific scenarios)
-## How to Use (step-by-step)
-## Examples (2-3 concrete examples)
+# 제목은 스킬 이름과 일치
+## 목적 (왜 존재하는지)
+## 사용 시기 (특정 시나리오)
+## 사용 방법 (단계별)
+## 예제 (2-3개의 구체적인 예제)
 ```
 
-### README Updates
+### README 업데이트
 
-When adding features, update:
-- Feature list with description
-- Agent/skill/command tables
-- Usage examples (if applicable)
-- Configuration options (if applicable)
+기능 추가 시 업데이트:
+- 설명이 있는 기능 목록
+- 에이전트/스킬/명령어 테이블
+- 사용 예제 (해당하는 경우)
+- 설정 옵션 (해당하는 경우)
 
-## 🔍 Code Review Process
+## 🔍 코드 리뷰 프로세스
 
-### For Contributors
+### 기여자를 위해
 
-1. **Self-Review**: Check your own code first
-2. **Documentation**: Update relevant docs
-3. **Testing**: Test manually with real scenarios
-4. **Commit Messages**: Follow conventional commit format
-5. **PR Description**: Explain what, why, how
+1. **자체 리뷰**: 먼저 자신의 코드 확인
+2. **문서화**: 관련 문서 업데이트
+3. **테스트**: 실제 시나리오로 수동 테스트
+4. **커밋 메시지**: 컨벤셔널 커밋 형식 준수
+5. **PR 설명**: 무엇을, 왜, 어떻게 설명
 
-### For Reviewers
+### 리뷰어를 위해
 
-Review for:
-- **Functionality**: Does it work as intended?
-- **Code Quality**: Is it clean, readable, maintainable?
-- **Documentation**: Is it well-documented?
-- **Consistency**: Does it match existing patterns?
-- **Performance**: Any performance concerns?
-- **Security**: Any security implications?
+다음 사항 검토:
+- **기능**: 의도한 대로 작동하는가?
+- **코드 품질**: 깔끔하고, 읽기 쉽고, 유지보수 가능한가?
+- **문서화**: 잘 문서화되어 있는가?
+- **일관성**: 기존 패턴과 일치하는가?
+- **성능**: 성능 문제가 있는가?
+- **보안**: 보안 관련 사항이 있는가?
 
-## 🏷️ Issue Labels
+## 🏷️ 이슈 라벨
 
-We use these labels:
+다음 라벨을 사용합니다:
 
-- `bug`: Something isn't working
-- `feature`: New feature request
-- `enhancement`: Improvement to existing feature
-- `documentation`: Documentation improvements
-- `good-first-issue`: Good for newcomers
-- `help-wanted`: Community help appreciated
-- `priority:high`: High priority
-- `priority:medium`: Medium priority
-- `priority:low`: Low priority
-- `agent`: Related to agents
-- `skill`: Related to skills
-- `command`: Related to commands
-- `hook`: Related to hooks
+- `bug`: 무언가 작동하지 않음
+- `feature`: 새 기능 요청
+- `enhancement`: 기존 기능 개선
+- `documentation`: 문서 개선
+- `good-first-issue`: 초보자에게 좋음
+- `help-wanted`: 커뮤니티 도움 환영
+- `priority:high`: 높은 우선순위
+- `priority:medium`: 중간 우선순위
+- `priority:low`: 낮은 우선순위
+- `agent`: 에이전트 관련
+- `skill`: 스킬 관련
+- `command`: 명령어 관련
+- `hook`: Hook 관련
 
-## 🎯 Roadmap Contribution
+## 🎯 로드맵 기여
 
-Want to work on roadmap items? Check:
-- [CHANGELOG.md](./CHANGELOG.md) - Planned versions
-- [GitHub Projects](https://github.com/your-org/nine-step-workflow-plugin/projects) - Task boards
-- [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions) - Feature discussions
+로드맵 항목 작업을 원하시나요? 확인:
+- [CHANGELOG.md](./CHANGELOG.md) - 계획된 버전
+- [GitHub Projects](https://github.com/your-org/nine-step-workflow-plugin/projects) - 작업 보드
+- [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions) - 기능 토론
 
-## 🤝 Community Guidelines
+## 🤝 커뮤니티 가이드라인
 
-### Code of Conduct
+### 행동 강령
 
-- Be respectful and inclusive
-- Provide constructive feedback
-- Focus on the problem, not the person
-- Assume good intentions
-- Help newcomers learn
+- 존중하고 포용적이어야 함
+- 건설적인 피드백 제공
+- 사람이 아닌 문제에 집중
+- 좋은 의도를 가정
+- 초보자가 배우도록 도움
 
-### Communication
+### 소통
 
-- **GitHub Issues**: Bug reports, feature requests
-- **GitHub Discussions**: Ideas, questions, general discussion
-- **Pull Requests**: Code contributions with clear descriptions
-- **Email**: security@example.com for security issues
+- **GitHub Issues**: 버그 보고, 기능 요청
+- **GitHub Discussions**: 아이디어, 질문, 일반 토론
+- **Pull Requests**: 명확한 설명이 있는 코드 기여
+- **이메일**: 보안 문제는 security@example.com
 
-## 🆘 Getting Help
+## 🆘 도움 받기
 
-Stuck? Here's how to get help:
+막혔나요? 도움을 받는 방법:
 
-1. **Read Documentation**: Check README, CHANGELOG, and skill/agent docs
-2. **Search Issues**: Someone might have asked already
-3. **Ask in Discussions**: Community can help
-4. **Create Issue**: If it's a bug or missing feature
+1. **문서 읽기**: README, CHANGELOG 및 스킬/에이전트 문서 확인
+2. **이슈 검색**: 누군가 이미 물어봤을 수 있음
+3. **토론에서 질문**: 커뮤니티가 도울 수 있음
+4. **이슈 생성**: 버그 또는 누락된 기능인 경우
 
-## 📊 Contribution Recognition
+## 📊 기여 인정
 
-Contributors are recognized:
-- Listed in release notes
-- Mentioned in CHANGELOG.md
-- GitHub contributor graph
-- Special recognition for major contributions
+기여자는 다음과 같이 인정받습니다:
+- 릴리스 노트에 나열됨
+- CHANGELOG.md에 언급됨
+- GitHub 기여자 그래프
+- 주요 기여에 대한 특별 인정
 
-## 🔐 Security Issues
+## 🔐 보안 이슈
 
-**Do not** open public issues for security vulnerabilities.
+보안 취약점에 대해 공개 이슈를 열지 **마세요**.
 
-Instead:
-1. Email security@example.com
-2. Include detailed description
-3. Provide reproduction steps
-4. Allow 90 days for fix before disclosure
+대신:
+1. security@example.com으로 이메일 보내기
+2. 상세한 설명 포함
+3. 재현 단계 제공
+4. 공개 전에 수정을 위해 90일 허용
 
-## 📜 License
+## 📜 라이선스
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+기여함으로써 귀하의 기여가 MIT 라이선스에 따라 라이선스됨에 동의합니다.
 
 ---
 
-## Questions?
+## 질문이 있으신가요?
 
-- **Documentation**: [Wiki](https://github.com/your-org/nine-step-workflow-plugin/wiki)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions)
-- **Email**: contribute@example.com
+- **문서**: [Wiki](https://github.com/your-org/nine-step-workflow-plugin/wiki)
+- **토론**: [GitHub Discussions](https://github.com/your-org/nine-step-workflow-plugin/discussions)
+- **이메일**: contribute@example.com
 
-Thank you for contributing to the Nine-Step Workflow Plugin! 🎉
+Nine-Step Workflow 플러그인에 기여해주셔서 감사합니다! 🎉

@@ -57,3 +57,8 @@ ENV/
 # Plugin Development
 .claude-plugin-dev/
 test-projects/
+
+# Version tracking (keep .version.json but ignore temp files)
+.version.json.tmp
+.version.json.bak
+.version-cache/
