@@ -169,12 +169,13 @@ None - testing methodology is built-in, not a separate skill.
 
 ### Phase 4: Reporting & Cleanup
 
-1. Provide clear PASS/FAIL status for each test case
-2. For failures, explain why behavior doesn't match intent
-3. For intentional errors that worked correctly, note as expected behavior
-4. Include relevant logs, screenshots, or response data
-5. **Clean up `.test/` directory** - remove all temporary test files and scripts
-6. Verify no test artifacts remain in project root
+1. **Write all reports to `.test/` directory** (e.g., `.test/TEST_REPORT_Phase{X}.md`)
+2. Provide clear PASS/FAIL status for each test case
+3. For failures, explain why behavior doesn't match intent
+4. For intentional errors that worked correctly, note as expected behavior
+5. Include relevant logs, screenshots, or response data
+6. **Clean up `.test/` directory** - remove all temporary test files and scripts
+7. **Verify project root is clean** - NO test reports or artifacts in root directory
 
 ## 📄 Test File Management
 
@@ -202,6 +203,10 @@ None - testing methodology is built-in, not a separate skill.
 - If test fails, assume **code is broken, NOT the test**
 
 ## 📄 Test Report Format
+
+**CRITICAL: All test reports MUST be written to `.test/` directory, NEVER to project root.**
+
+Create test report at: `.test/TEST_REPORT_Phase{X}.md`
 
 ```markdown
 ## Feature: [Feature Name]
@@ -265,9 +270,10 @@ None - testing methodology is built-in, not a separate skill.
 - [ ] Edge cases and boundary conditions tested
 - [ ] Intentional errors distinguished from failures
 - [ ] Project procedures followed (restart, log cleanup)
+- [ ] **All test reports written to `.test/` directory (NOT project root)**
 - [ ] All test results documented with evidence
-- [ ] `.test/` directory cleaned up
-- [ ] No test artifacts in project root
+- [ ] `.test/` directory cleaned up after testing
+- [ ] **Project root verified clean - NO test files (TEST_REPORT.md, TESTING_SUMMARY.txt, etc.)**
 
 ## 📚 Additional Resources
 
